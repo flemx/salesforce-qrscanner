@@ -1,0 +1,12 @@
+{
+  "orgName": "QR scanner - Enterprise",
+  "description": "Enterprise Org for QR scanner",
+  "edition": "Enterprise",
+  "features": ["Communities"],
+  "settings": {
+      "orgPreferenceSettings" : {
+          "s1DesktopEnabled": true,
+          "networksEnabled": true
+      }
+  }
+}

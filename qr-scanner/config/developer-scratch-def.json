@@ -1,0 +1,12 @@
+{
+  "orgName": "QR scanner - dev",
+  "description": "Development Org for QR scanner",
+  "edition": "Developer",
+  "features": ["Communities"],
+  "settings": {
+      "orgPreferenceSettings" : {
+          "s1DesktopEnabled": true,
+          "networksEnabled": true
+      }
+  }
+}
