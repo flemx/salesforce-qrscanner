@@ -7,25 +7,24 @@
     <allowStandardLookups>false</allowStandardLookups>
     <allowStandardPortalPages>true</allowStandardPortalPages>
     <allowStandardSearch>false</allowStandardSearch>
-    <authorizationRequiredPage>CommunitiesLogin</authorizationRequiredPage>
+    <authorizationRequiredPage>Unauthorized</authorizationRequiredPage>
     <bandwidthExceededPage>BandwidthExceeded</bandwidthExceededPage>
     <browserXssProtection>true</browserXssProtection>
     <clickjackProtectionLevel>SameOriginOnly</clickjackProtectionLevel>
     <contentSniffingProtection>true</contentSniffingProtection>
     <cspUpgradeInsecureRequests>true</cspUpgradeInsecureRequests>
-    <customWebAddresses>
-        <domainName>qrscan123</domainName>
-        <primary>true</primary>
-    </customWebAddresses>
     <fileNotFoundPage>FileNotFound</fileNotFoundPage>
     <genericErrorPage>Exception</genericErrorPage>
     <inMaintenancePage>InMaintenance</inMaintenancePage>
-    <indexPage>qrscanner</indexPage>
-    <masterLabel>qrscanner</masterLabel>
+    <inactiveIndexPage>InMaintenance</inactiveIndexPage>
+    <indexPage>SiteLogin</indexPage>
+    <masterLabel>myqr</masterLabel>
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <requireHttps>true</requireHttps>
     <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
     <siteAdmin>test-l4olqyrhttjd@example.com</siteAdmin>
-    <siteType>ChatterNetwork</siteType>
-    <subdomain>dream-customization-8538-16a36067682</subdomain>
+    <siteTemplate>qrscanner</siteTemplate>
+    <siteType>Visualforce</siteType>
+    <subdomain>qrscanner123</subdomain>
+    <urlPathPrefix>qrscanner</urlPathPrefix>
 </CustomSite>

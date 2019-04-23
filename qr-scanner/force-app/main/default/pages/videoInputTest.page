@@ -1,0 +1,112 @@
+<apex:page >
+    
+    <style>
+       body {
+          background: #F7F7F7;
+          margin: 0;
+          padding: 0;
+        }
+        
+        #video-container {
+          margin: 2em auto 0;
+          width: 500px;
+          padding: 2em;
+          background: white;
+          -webkit-box-shadow: 0 1px 10px #D9D9D9;
+          -moz-box-shadow: 0 1px 10px #D9D9D9;
+          -ms-box-shadow: 0 1px 10px #D9D9D9;
+          -o-box-shadow: 0 1px 10px #D9D9D9;
+          box-shadow: 0 1px 10px #D9D9D9;
+        }
+    </style>
+    
+
+  
+    <h1>
+        VIDEO TEST 19
+    </h1>
+       <div id="video-container">
+        <video id="camera-stream" width="500" autoplay="true"></video>
+      </div>
+
+    
+        <!--
+
+    <apex:includeScript value="{!$Resource.QRscanner_js}"/>
+    <apex:stylesheet value="{!$Resource.QRScanner_css}"/>
+	
+    <main class="wrapper" style="padding-top:2em">
+
+        <section class="container" id="demo-content">
+            <h1 class="title">Scan QR Code - TEST90! </h1>
+
+   
+            <div>
+                <a class="button" id="startButton">Start</a>
+                <a class="button" id="resetButton">Reset</a>
+            </div>
+
+            <div>
+                <video id="video" width="300" height="200" style="border: 1px solid gray"></video>
+            </div>
+
+            <div id="sourceSelectPanel" style="display:none">
+                <label for="sourceSelect">Change video source:</label>
+                <select id="sourceSelect" style="max-width:400px">
+                </select>
+            </div>
+
+            <label>Result:</label>
+            <blockquote>
+                <p id="result"></p>
+            </blockquote>
+        </section>
+
+    
+    </main>
+
+
+-->
+    <script>
+    
+
+    ///Test Function to get camera input from back camera
+    
+    	navigator.mediaDevices.getUserMedia({video:true})
+           	.then(function(stream){
+                console.log('Stream1 started with success');
+            	setDevice();
+            })
+            .catch(function(){ 
+                console.log('Failed to start stream1')
+            });
+    
+        function startVideo(constrains){
+			navigator.mediaDevices.getUserMedia(constrains)
+           	.then(function(stream){
+                console.log('Stream2 started with success');
+            	document.getElementById('camera-stream').srcObject = stream;
+            })
+            .catch(function(){ 
+                console.log('Failed to start stream2')
+            });
+    	}
+    
+    
+    	function setDevice(){
+    	navigator.mediaDevices.enumerateDevices()
+        .then(function(devices){
+            console.log('Getting device');
+            console.log(devices[1]);
+            var constrains = {
+        		video: {deviceId: devices[1].deviceId ? {exact: devices[1].deviceId} : undefined}
+        	};
+            startVideo(constrains);
+        })
+        .catch(function(){
+        	console.log('getting device failed');
+        })
+    	}
+         
+    </script>
+</apex:page>
