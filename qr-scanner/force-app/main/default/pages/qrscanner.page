@@ -28,7 +28,7 @@
     <main class="wrapper" style="padding-top:2em">
 
         <section class="container" id="demo-content">
-            <h1 class="title">Scan QR Code - TEST3! </h1>
+            <h1 class="title">Scan QR Code - TEST6! </h1>
 
    
             <div>
@@ -60,47 +60,21 @@
     <script>
     
     	
-      /* Function to Pre load the camera and set the  device Id*/
+      /* Function to Pre load the camera and set the  device Id */
         window.addEventListener('load', function () {
-            let selectedDeviceId;
-            
-             navigator.mediaDevices.getUserMedia({video:true})
-           	.then(function(stream){
-                console.log('Stream1 started with success');
-                setDevice();
-            })
-            .catch(function(){ 
-                console.log('Failed to start stream1')
-            });
-            	
-            function setDevice(){
-                navigator.mediaDevices.enumerateDevices()
-                .then(function(devices){
-                    console.log('Getting device');
-                    console.log(devices[1]);
-                    selectedDeviceId = devices[1].deviceId
-                })
-                .catch(function(){
-                    console.log('getting device failed');
-                  })
-                }
-            
-            
-            
+       
+
             const codeReader = new ZXing.BrowserQRCodeReader()
             console.log('ZXing code reader initialized')
             codeReader.getVideoInputDevices()
                 .then(() => {
-                    document.getElementById('startButton').addEventListener('click', () => {
-                        codeReader.decodeFromInputVideoDevice(selectedDeviceId, 'video').then((result) => {
+                        codeReader.decodeFromInputVideoDevice(undefined, 'video').then((result) => {
                             console.log(result)
                             document.getElementById('result').textContent = result.text
                         }).catch((err) => {
                             console.error(err)
                             document.getElementById('result').textContent = err
                         })
-                        console.log(`Started continous decode from camera with id ${selectedDeviceId}`)
-                    })
                     document.getElementById('resetButton').addEventListener('click', () => {
                         codeReader.reset()
                         console.log('Reset.')
@@ -109,6 +83,9 @@
                 .catch((err) => {
                     console.error(err)
                 })
+               /* */
+
+
         })
 
     </script>
