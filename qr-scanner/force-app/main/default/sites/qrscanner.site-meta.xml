@@ -20,12 +20,13 @@
     <fileNotFoundPage>FileNotFound</fileNotFoundPage>
     <genericErrorPage>Exception</genericErrorPage>
     <inMaintenancePage>InMaintenance</inMaintenancePage>
-    <indexPage>qrscanner</indexPage>
+    <indexPage>SiteLogin</indexPage>
     <masterLabel>qrscanner</masterLabel>
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <requireHttps>true</requireHttps>
     <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
     <siteAdmin>test-l4olqyrhttjd@example.com</siteAdmin>
+    <siteTemplate>qrscanner</siteTemplate>
     <siteType>ChatterNetwork</siteType>
     <subdomain>dream-customization-8538-16a36067682</subdomain>
 </CustomSite>
