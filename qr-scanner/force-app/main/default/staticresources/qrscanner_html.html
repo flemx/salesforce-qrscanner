@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <link rel="preload" as="style" onload="this.rel='stylesheet';this.onload=null" href="/resource/1556710590000/QRScanner_css">
+    <style>
+
+        #video{
+            width: 100%;
+            height: 600px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <video id="video"></video>
+
+    <script type="text/javascript" src="/resource/1556710590000/QRscanner_js"></script>
+    <script type="text/javascript">
+       
+        console.log(window.location.hostname);
+        var lexOrigin = `https://${window.location.hostname}`;
+        function sendToLC(message) {
+            console.log('sendToLC executed');
+            parent.postMessage(message, lexOrigin);
+            
+        }
+    
+        function startCodeReader(){
+            const codeReader = new ZXing.BrowserQRCodeReader()
+            console.log('ZXing code reader initialized')
+            codeReader.getVideoInputDevices()
+                .then(() => {
+                    codeReader.decodeFromInputVideoDevice(undefined, 'video').then((result) => {
+                        //console.log(result.text)
+                        try{
+                            let qrobj = JSON.parse(result.text);
+                            if(qrobj.isMale){
+                                console.log('Send to parent');
+                                this.sendToLC(qrobj)
+                            }
+                        }
+                        catch(err){
+                            console.log("Invalid QR code");
+                            setTimeout(function() {
+                                startCodeReader();
+                              }, 3000);
+                        }
+               
+                    }).catch((err) => {
+                        console.error(err)
+                    })
+                })
+                .catch((err) => {
+                    console.error(err)
+                })
+        }
+
+        window.addEventListener('load', function () {
+            startCodeReader();
+        })
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<apex:page sidebar="false" showHeader="false" >
+    
+    <style>
+        #video{
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+    <apex:includeScript value="{!$Resource.QRscanner_js}"/>
+    <video id="video"></video>
+    <script>
+        console.log(window.location.hostname);
+        var lexOrigin = `https://app-page-3465-dev-ed.lightning.force.com`;
+        function sendToLC(message) {
+            parent.postMessage(message, lexOrigin);
+            console.log(lexOrigin);
+        }
+        window.addEventListener('load', function () {
+            const codeReader = new ZXing.BrowserQRCodeReader()
+            console.log('ZXing code reader initialized')
+            codeReader.getVideoInputDevices()
+                .then(() => {
+                    codeReader.decodeFromInputVideoDevice(undefined, 'video').then((result) => {
+                        //console.log(result.text)
+                        let qrobj = {"istrue":true, "result":JSON.parse(result.text)};
+                        console.log('Send to parent');
+                        sendToLC(qrobj)
+                       
+                    }).catch((err) => {
+                        console.error(err)
+                    })
+                })
+                .catch((err) => {
+                    console.error(err)
+                })
+        })
+    </script>
+
+</apex:page>
