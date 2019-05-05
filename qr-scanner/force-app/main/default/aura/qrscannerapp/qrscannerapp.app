@@ -1,3 +1,3 @@
-<aura:application>
+<aura:application extends="force:slds">
 <c:qrscan/>
 </aura:application>	

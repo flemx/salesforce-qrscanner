@@ -1,8 +1,10 @@
 <template>
- 
-    <div style="width: 800px">
-
+    <div class="fake-content">
     </div>
-    <iframe src={qrscan_src} width="100%" height="800px"></iframe>
-
+    <button  onclick={openQrScan} class="mybtn">Scan QR Code</button>
+    <template if:true={areDetailsVisible}>
+        <div class="qrcontainer">
+            <iframe src={qrscan_src} class="qriframe" width="100%" height="100%"></iframe>
+       </div>
+    </template>
 </template>

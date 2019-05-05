@@ -1,0 +1,22 @@
+.qrcontainer{
+    position: fixed;
+    width: 102%;
+    height: 102%;
+    margin: -1%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+.fake-content{
+    height: 400px;
+    border: 1px solid black;
+}
+
+.mybtn{
+    width: 300px;
+    height: 50px;
+    font-size: 2em;
+    border: 1px solid black;
+}
