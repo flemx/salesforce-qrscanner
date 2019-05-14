@@ -20,3 +20,10 @@
     font-size: 2em;
     border: 1px solid black;
 }
+
+.confirm-success{
+    font-size: 2.5em;
+    color: green;
+    margin-top: 20%;
+    text-align: center;
+}

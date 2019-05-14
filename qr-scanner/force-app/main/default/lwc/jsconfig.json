@@ -5,9 +5,6 @@
         "paths": {
             "c/qrscan": [
                 "qrscan/qrscan.js"
-            ],
-            "c/qrscanner": [
-                "qrscanner/qrscanner.js"
             ]
         }
     },

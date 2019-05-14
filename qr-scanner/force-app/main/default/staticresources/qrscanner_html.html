@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     
-    <link rel="preload" as="style" onload="this.rel='stylesheet';this.onload=null" href="/resource/1556710590000/QRScanner_css">
     <style>
 
         #video{
@@ -18,7 +17,7 @@
 <body>
     <video id="video"></video>
 
-    <script type="text/javascript" src="/resource/1556710590000/QRscanner_js"></script>
+    <script type="text/javascript" src="/qrscanner/resource/QRscanner_js"></script>
     <script type="text/javascript">
        
         console.log(window.location.hostname);
@@ -38,10 +37,8 @@
                         //console.log(result.text)
                         try{
                             let qrobj = JSON.parse(result.text);
-                            if(qrobj.isMale){
-                                console.log('Send to parent');
-                                this.sendToLC(qrobj)
-                            }
+                            console.log('Send to parent');
+                            this.sendToLC(qrobj)
                         }
                         catch(err){
                             console.log("Invalid QR code");

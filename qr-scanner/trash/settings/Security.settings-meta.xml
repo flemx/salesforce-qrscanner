@@ -24,7 +24,7 @@
         <enableClickjackSetup>true</enableClickjackSetup>
         <enableContentSniffingProtection>true</enableContentSniffingProtection>
         <enablePostForSessions>false</enablePostForSessions>
-        <enableSMSIdentity>false</enableSMSIdentity>
+        <enableSMSIdentity>true</enableSMSIdentity>
         <enableUpgradeInsecureRequests>true</enableUpgradeInsecureRequests>
         <enableXssProtection>true</enableXssProtection>
         <enforceIpRangesEveryRequest>false</enforceIpRangesEveryRequest>

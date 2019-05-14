@@ -1,5 +1,8 @@
 <template>
     <div class="fake-content">
+        <template if:true={confirmSuccess}>
+            <h1 class="confirm-success">Qr Code Scan Successful!</h1>
+        </template>
     </div>
     <button  onclick={openQrScan} class="mybtn">Scan QR Code</button>
     <template if:true={areDetailsVisible}>

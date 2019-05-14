@@ -13,20 +13,16 @@
     <clickjackProtectionLevel>SameOriginOnly</clickjackProtectionLevel>
     <contentSniffingProtection>true</contentSniffingProtection>
     <cspUpgradeInsecureRequests>true</cspUpgradeInsecureRequests>
-    <customWebAddresses>
-        <domainName>qrscan123</domainName>
-        <primary>true</primary>
-    </customWebAddresses>
     <fileNotFoundPage>FileNotFound</fileNotFoundPage>
     <genericErrorPage>Exception</genericErrorPage>
     <inMaintenancePage>InMaintenance</inMaintenancePage>
-    <indexPage>SiteLogin</indexPage>
+    <indexPage>CommunitiesLanding</indexPage>
     <masterLabel>qrscanner</masterLabel>
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <requireHttps>true</requireHttps>
     <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
-    <siteAdmin>test-l4olqyrhttjd@example.com</siteAdmin>
-    <siteTemplate>qrscanner</siteTemplate>
+    <selfRegPage>CommunitiesSelfReg</selfRegPage>
+    <siteAdmin>test-rbq9otipqdxm@example.com</siteAdmin>
     <siteType>ChatterNetwork</siteType>
-    <subdomain>dream-customization-8538-16a36067682</subdomain>
+    <subdomain>app-page-3465-dev-ed-16a7328cee9</subdomain>
 </CustomSite>
