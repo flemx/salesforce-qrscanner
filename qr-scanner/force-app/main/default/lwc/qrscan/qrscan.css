@@ -27,3 +27,48 @@
     margin-top: 20%;
     text-align: center;
 }
+
+.app-container{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+}
+
+.app-header{
+    height: 60px;
+    width: 100%;
+}
+
+.app-header img{
+    height: 100%;
+    width: auto;
+}
+
+.app-body{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(242,242,242);
+}
+
+.app-qrscan{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.app-qrscan p{
+    text-align: center;
+    font-size: 1.2em;
+    color: #78849E;
+}
+
+.app-qrscan button{
+    width: 80%;
+    margin-left: 10%;
+    color: white;
+    background-color: #E7731F;
+    height: 45px;
+    margin-top: 4%;
+    border-radius: 8px;
+    font-size: 1.2em;
+}

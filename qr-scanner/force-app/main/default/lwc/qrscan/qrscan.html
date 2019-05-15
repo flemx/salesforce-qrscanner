@@ -1,10 +1,75 @@
 <template>
+
+    <!--
     <div class="fake-content">
         <template if:true={confirmSuccess}>
             <h1 class="confirm-success">Qr Code Scan Successful!</h1>
         </template>
     </div>
     <button  onclick={openQrScan} class="mybtn">Scan QR Code</button>
+    -->
+
+ <!--  HTML skeleton code for potential real app versionj
+    <div class="app-container">
+        <div class="app-header">
+            <img />
+        </div>
+        <div class="app-body">
+            <div class="app-thumbnail">
+                <img />
+                <div class="app-thumbnail-text">
+                    <h2></h2>
+                    <p></p>
+                </div>
+            </div>
+            <div class="app-360">
+                <div class="app-360status">
+                    <img />
+                    <div class="app-360status-text">
+                        <h2></h2>
+                        <p></p>
+                    </div>
+                </div>
+                </div>
+                <div class="app-360profile">
+                    <img />
+                    <div class="app-360profile-text">
+                        <h2></h2>
+                        <p></p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="app-qrscan">
+                <p> Scan the QR code to unlock loyalty points </p>
+                <button> Scan QR Code </button>
+            </div>
+        </div>
+    </div>
+    -->
+
+    <div class="app-container">
+            <div class="app-header">
+                <img src={qrscan_head}/>
+            </div>
+            <div class="app-body">
+                <div class="app-fake-content">
+                    <template if:true={contentBefore}>
+                        <img src={qrscan_cont_before}/>
+                    </template>
+                    <template if:false={contentBefore}>
+                        <img src={qrscan_cont_after}/>
+                    </template>
+                </div>
+                <div class="app-qrscan">
+                    <p> Scan the QR code to unlock loyalty points </p>
+                    <button onclick={openQrScan}> Scan QR Code </button>
+                </div>
+            </div>
+        </div>
+
+
+    
     <template if:true={areDetailsVisible}>
         <div class="qrcontainer">
             <iframe src={qrscan_src} class="qriframe" width="100%" height="100%"></iframe>

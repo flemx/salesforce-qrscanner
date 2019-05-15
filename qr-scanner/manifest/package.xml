@@ -34,6 +34,9 @@
   </types>
   <types>
     <name>StaticResource</name>
+    <members>QRScanner_app_header</members>
+    <members>QRScanner_app_content_before</members>
+    <members>QRScanner_app_content_after</members>
     <members>QRscanner_js</members>
     <members>qrscanner_html</members>
   </types>

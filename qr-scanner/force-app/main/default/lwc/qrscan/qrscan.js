@@ -1,9 +1,17 @@
 import { LightningElement, track } from 'lwc';
 import QRSCAN_HTML from '@salesforce/resourceUrl/qrscanner_html';
+import QRSCAN_HEADER from '@salesforce/resourceUrl/QRScanner_app_header';
+import QRSCAN_CONTENT1 from '@salesforce/resourceUrl/QRScanner_app_content_before';
+import QRSCAN_CONTENT2 from '@salesforce/resourceUrl/QRScanner_app_content_after';
 import qrcontroller from '@salesforce/apex/QrScanController.createOrder';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class Qrscan extends LightningElement {
     qrscan_src = QRSCAN_HTML;
+    qrscan_head = QRSCAN_HEADER;
+    qrscan_cont_before = QRSCAN_CONTENT1;
+    qrscan_cont_after = QRSCAN_CONTENT2; 
+    @track contentBefore = true;
     @track areDetailsVisible = false;
     @track confirmSuccess = false;
 
@@ -23,8 +31,15 @@ export default class Qrscan extends LightningElement {
                         window.console.log('Result returned from createOrder()');
                         window.console.log(result);
                         if(result === 'success'){
+                            this.contentBefore = false;
                             this.areDetailsVisible = false;
-                            this.confirmSuccess = true;
+                            const evt = new ShowToastEvent({
+                                title: 'QR Code scanner',
+                                message: 'Succesfully added transaction',
+                                variant: 'success',
+                            });
+                            this.dispatchEvent(evt);
+                            //this.confirmSuccess = true;
                         }
                     })
                     .catch(error => {
